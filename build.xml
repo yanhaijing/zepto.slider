@@ -1,0 +1,94 @@
+<project name="zepto.tab.js" default="build.dev">
+	<tstamp>
+		<format property="build.time"
+		pattern="MMMM d, yyyy hh:mm:ss"
+		locale="en,US"/>
+	</tstamp>
+	<!-- import properties -->
+	<loadproperties srcfile="build.properties" />
+	<!-- initialization and cleanup -->
+	
+	<!-- define or import utility targets here -->
+	<target name="init">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${yuidoc.output}"/>
+	</target>
+	<target name="clean">
+		<delete dir="${build.dir}"/>
+		<delete dir="${yuidoc.output}"/>
+	</target>
+	<target name="validate">
+		<apply executable="java" failonerror="true" parallel="true">
+			<fileset dir="${src.dir}" includes="**/*.js" />
+			<arg line="-jar"/>
+			<arg path="${rhino}"/>
+			<arg path="${jshint}" />
+			<arg line="${jshint.options}" />
+			<srcfile/>
+		</apply>
+	</target>
+	<target name="concatenate">
+		<concat destfile="${build.dir}/zepto.slider.js" fixlastline="yes" eol="lf">
+			<header trimleading="yes">/*!
+			zepto.slider v${version} http://yanhaijing.com/zepto.slider ${license}
+			*/
+			/* Build time: ${build.time} */
+			</header>
+			<filelist dir="${src.dir}" files="" />
+			<fileset dir="${src.dir}" includes="**/*.js" excludes=""/>
+		</concat>
+		<concat destfile="${build.dir}/zepto.slider.css" fixlastline="yes" eol="lf">
+			<header trimleading="yes">/*!
+			zepto..slider v${version} http://yanhaijing.com/zepto.slider ${license}
+			*/
+			/* Build time: ${build.time} */
+			</header>
+			<filelist dir="${src.dir}" files="" />
+			<fileset dir="${src.dir}" includes="**/*.css" excludes=""/>
+		</concat>
+	</target>
+	<target name="test">
+	</target>	
+	<target name="minify">
+		<apply executable="java" failonerror="true">
+			<fileset dir="${build.dir}" includes="*.js"/>
+			<mapper type="glob" from="*.js" to="${build.dir}/*-min.js"/>
+			<arg line="-jar"/>
+			<arg path="${yuicompressor}"/>
+			<arg line="${yuicompressor.options}"/>
+			<srcfile/>
+			<arg line="-o"/>
+			<targetfile/>
+		</apply>
+		<apply executable="java" failonerror="true">
+			<fileset dir="${build.dir}" includes="*.css"/>
+			<mapper type="glob" from="*.css" to="${build.dir}/*-min.css"/>
+			<arg line="-jar"/>
+			<arg path="${yuicompressor}"/>
+			<arg line="${yuicompressor.options}"/>
+			<srcfile/>
+			<arg line="-o"/>
+			<targetfile/>
+		</apply>
+	</target>
+	<target name="document">
+		<exec executable="yuidoc" failonerror="true">
+			<arg path="${src.dir}"/>
+			<arg line="-o" />
+			<arg path="${yuidoc.output}"/>
+		</exec>
+	</target>
+	<target name="bake">
+		<replaceregexp match="@VERSION@" replace="${version}" flags="g" byline="true">
+			<fileset dir="${build.dir}" includes="**/*"/>
+		</replaceregexp>
+	</target>
+	<!-- main builds -->
+	<target name="build.dev" depends="clean,init,concatenate"> 
+	</target>
+	<target name="build.int" depends="build.dev,minify,test"> 
+	</target>
+	<target name="build.release" depends="build.int,bake"> 
+	</target>
+	
+</project>

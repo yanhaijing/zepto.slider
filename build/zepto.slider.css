@@ -1,0 +1,26 @@
+/*!
+zepto..slider v1.0.0 http://yanhaijing.com/zepto.slider LICENSE
+*/
+/* Build time: March 12, 2014 11:10:19 */
+.js-slider{
+    overflow:hidden;
+    position:relative;
+}
+.js-slider-img-wrap{
+    overflow:hidden;
+}
+.js-slider-h .js-slider-img{
+    float:left;
+}
+.js-slider-num-wrap{
+    position:absolute;
+    bottom:5px;
+    right:5px;
+    z-index:1000;
+}
+.js-slider-num{
+    float:left;
+}
+.js-slider-num-cur{
+    color:#f00;
+}

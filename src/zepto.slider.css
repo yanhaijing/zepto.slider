@@ -1,0 +1,22 @@
+.js-slider{
+    overflow:hidden;
+    position:relative;
+}
+.js-slider-img-wrap{
+    overflow:hidden;
+}
+.js-slider-h .js-slider-img{
+    float:left;
+}
+.js-slider-num-wrap{
+    position:absolute;
+    bottom:5px;
+    right:5px;
+    z-index:1000;
+}
+.js-slider-num{
+    float:left;
+}
+.js-slider-num-cur{
+    color:#f00;
+}

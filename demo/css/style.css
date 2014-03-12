@@ -1,0 +1,23 @@
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.tab-nav li {
+    width: 50px;
+    height: 30px;
+    border: 1px solid #BBBBBB;
+    border-bottom: 0;
+}
+.tab-nav li.cur {
+    background: #f00;
+}
+pre {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    font-size: 13px;
+    line-height: 19px;
+    overflow: auto;
+    padding: 6px 10px;
+    border-radius: 3px;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>testSlider</title>
+		<meta name="description" content="">
+		<meta name="author" content="YANXUEFENG">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link rel="stylesheet" href="../build/zepto.slider-min.css" />
+		<style>
+			ul{list-style:none;padding:0;margin:0}
+			.pic img{width:100%;height:auto;}
+			.num li{margin-left: 4px;width: 12px;height: 12px;border-radius: 6px;text-indent: -9999px;background-color: #3c1809;}
+			.num .js-slider-num-cur{background-color:#f00;}
+		</style>
+	</head>
+
+	<body>
+		<div class="slider js-slider">
+			<ul class="pic js-slider-img-wrap">
+                <li><a title="大将军新服" href="#"><img width="437" height="306" src="img/1.jpg" alt=""></a></li>
+                <li><a title="铁血大宋新服" href="#"><img width="437" height="306" src="img/2.jpg" alt=""></a></li>
+                <li><a title="惊天战神新服" href="#"><img width="437" height="306" src="img/3.jpg" alt=""></a></li>
+                <li><a title="梦幻之城新服" href="#"><img width="437" height="306" src="img/4.jpg" alt=""></a></li>
+            </ul>
+            <ul class="num js-slider-num-wrap">
+                <li class="cur">1</li>
+                <li class="">2</li>
+                <li class="">3</li>
+                <li class="">4</li>
+            </ul>
+		</div><!-- .slider -->
+		<div class="slider js-slider1">
+			<ul class="pic js-slider-img-wrap">
+                <li><a title="大将军新服" href="#"><img width="437" height="306" src="img/1.jpg" alt=""></a></li>
+                <li><a title="铁血大宋新服" href="#"><img width="437" height="306" src="img/2.jpg" alt=""></a></li>
+                <li><a title="惊天战神新服" href="#"><img width="437" height="306" src="img/3.jpg" alt=""></a></li>
+                <li><a title="梦幻之城新服" href="#"><img width="437" height="306" src="img/4.jpg" alt=""></a></li>
+            </ul>
+            <ul class="num js-slider-num-wrap">
+                <li class="cur">1</li>
+                <li class="">2</li>
+                <li class="">3</li>
+                <li class="">4</li>
+            </ul>
+		</div><!-- .slider -->
+		<div class="slider js-slider2">
+			<ul class="pic js-slider-img-wrap">
+                <li><a title="大将军新服" href="#"><img width="437" height="306" src="img/1.jpg" alt=""></a></li>
+                <li><a title="铁血大宋新服" href="#"><img width="437" height="306" src="img/2.jpg" alt=""></a></li>
+                <li><a title="惊天战神新服" href="#"><img width="437" height="306" src="img/3.jpg" alt=""></a></li>
+                <li><a title="梦幻之城新服" href="#"><img width="437" height="306" src="img/4.jpg" alt=""></a></li>
+            </ul>
+            <ul class="num js-slider-num-wrap">
+                <li class="cur">1</li>
+                <li class="">2</li>
+                <li class="">3</li>
+                <li class="">4</li>
+            </ul>
+		</div><!-- .slider -->
+		<div class="slider js-slider3">
+			<ul class="pic js-slider-img-wrap">
+                <li><a title="大将军新服" href="#"><img width="437" height="306" src="img/1.jpg" alt=""></a></li>
+                <li><a title="铁血大宋新服" href="#"><img width="437" height="306" src="img/2.jpg" alt=""></a></li>
+                <li><a title="惊天战神新服" href="#"><img width="437" height="306" src="img/3.jpg" alt=""></a></li>
+                <li><a title="梦幻之城新服" href="#"><img width="437" height="306" src="img/4.jpg" alt=""></a></li>
+            </ul>
+            <ul class="num js-slider-num-wrap">
+                <li class="cur">1</li>
+                <li class="">2</li>
+                <li class="">3</li>
+                <li class="">4</li>
+            </ul>
+		</div><!-- .slider -->
+		<script src="js/zepto.js"></script>
+		<script src="../build/zepto.slider-min.js"></script>
+		<script>
+			$(".js-slider").slider();
+			$(".js-slider1").slider({direction: "down"});
+			$(".js-slider2").slider({direction: "left"});
+			$(".js-slider3").slider({direction: "right"});
+		</script>
+	</body>
+</html>
