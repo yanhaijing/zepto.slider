@@ -1,4 +1,4 @@
-#zepto.slider
+#zepto.slider [![license](http://img.shields.io/npm/l/express.svg)](https://github.com/yanhaijing/zepto.slider/blob/master/LICENSE)
 zepto.slider 基于zepto的移动图片轮播插件，依赖zepto.js
 
 ##Platform
